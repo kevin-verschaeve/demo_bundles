@@ -81,4 +81,13 @@ class PostAdmin extends AbstractAdmin
             ? $object->getTitle()
             : 'Blog Post'; // shown in the breadcrumb on the create view
     }
+
+    public function postUpdate($object)
+    {
+        // Called after the object is updated
+        // Other hooks are availables like: preUpdate, prePersist, postPersist, postRemove, preBatchAction, ...
+
+        // die('ok');
+    }
+
 }
