@@ -2,6 +2,7 @@
 
 namespace AppBundle\Admin;
 
+use AppBundle\Entity\Post;
 use AppBundle\Entity\Tag;
 use AppBundle\Entity\User;
 use AppBundle\Form\Type\DateTimePickerType;
@@ -18,21 +19,26 @@ class PostAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('title', TextType::class)
-            ->add('slug', TextType::class)
-            ->add('summary', TextType::class)
-            ->add('content', TextareaType::class)
-            ->add('publishedAt', DateTimePickerType::class)
-            ->add('author', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'fullName',
-            ])
-            ->add('tags', EntityType::class, [
-                'class' => Tag::class,
-                'choice_label' => 'name',
-                'multiple' => true,
-                'expanded' => false,
-            ])
+            ->with('Content', ['class' => 'col-md-8'])
+                ->add('title', TextType::class)
+                ->add('slug', TextType::class)
+                ->add('summary', TextType::class)
+                ->add('content', TextareaType::class)
+                ->add('publishedAt', DateTimePickerType::class)
+            ->end()
+
+            ->with('Meta data', ['class' => 'col-md-4'])
+                ->add('author', EntityType::class, [
+                    'class' => User::class,
+                    'choice_label' => 'fullName',
+                ])
+                ->add('tags', EntityType::class, [
+                    'class' => Tag::class,
+                    'choice_label' => 'name',
+                    'multiple' => true,
+                    'expanded' => false,
+                ])
+            ->end()
         ;
     }
 
@@ -51,5 +57,12 @@ class PostAdmin extends AbstractAdmin
             ->add('title')
             ->add('slug')
         ;
+    }
+
+    public function toString($object)
+    {
+        return $object instanceof Post
+            ? $object->getTitle()
+            : 'Blog Post'; // shown in the breadcrumb on the create view
     }
 }
