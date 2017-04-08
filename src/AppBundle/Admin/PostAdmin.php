@@ -16,6 +16,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class PostAdmin extends AbstractAdmin
 {
+    protected $datagridValues = [
+        '_sort_order' => 'ASC',
+        '_sort_by' => 'publishedAt',
+    ];
+
     protected function configureFormFields(FormMapper $form)
     {
         $form
@@ -45,7 +50,7 @@ class PostAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $filter)
     {
         $filter
-            ->add('id')
+            ->add('id', null, ['show_filter' => true])
             ->add('title')
             ->add('tags', null, [], EntityType::class, [
                 'class' => Tag::class,
@@ -59,7 +64,14 @@ class PostAdmin extends AbstractAdmin
         $list
             ->add('id')
             ->addIdentifier('title')
-            ->add('slug')
+            ->add('slug', null, ['editable' => true])
+            ->add('_action', null, [
+                'actions' => [
+                    'show' => [],
+                    'edit' => [],
+                    'delete' => ['template' => ':admin:delete_button.html.twig'],
+                ],
+            ])
         ;
     }
 
