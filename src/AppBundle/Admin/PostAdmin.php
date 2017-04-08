@@ -47,6 +47,10 @@ class PostAdmin extends AbstractAdmin
         $filter
             ->add('id')
             ->add('title')
+            ->add('tags', null, [], EntityType::class, [
+                'class' => Tag::class,
+                'choice_label' => 'name',
+            ])
         ;
     }
 
@@ -54,7 +58,7 @@ class PostAdmin extends AbstractAdmin
     {
         $list
             ->add('id')
-            ->add('title')
+            ->addIdentifier('title')
             ->add('slug')
         ;
     }
