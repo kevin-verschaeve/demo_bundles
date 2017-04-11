@@ -43,10 +43,14 @@
     },
     "require-dev": {
         "dama/doctrine-test-bundle": "^1.0",
+        "doctrine/data-fixtures": "^1.2",
         "friendsofphp/php-cs-fixer": "^2.0",
+        "hautelook/alice-bundle": "^2.0@beta",
+        "nelmio/alice": "^3.0@beta",
         "phpunit/phpunit": "^4.8 || ^5.0",
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "theofidry/alice-data-fixtures": "^1.0@beta"
     },
     "scripts": {
         "symfony-scripts": [

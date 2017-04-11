@@ -89,3 +89,6 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+hautelook_alice:
+    fixtures_path: 'Resources/fixtures/orm'
