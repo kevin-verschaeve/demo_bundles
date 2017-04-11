@@ -93,7 +93,12 @@ swiftmailer:
 # EASY ADMIN
 easy_admin:
     entities:
-        - AppBundle\Entity\Post
-        - AppBundle\Entity\Comment
-        - AppBundle\Entity\User
-        - AppBundle\Entity\Tag
+        Post:
+            class: AppBundle\Entity\Post
+            disabled_actions: ['edit']
+        Comment:
+            class: AppBundle\Entity\Comment
+        User:
+            class: AppBundle\Entity\User
+        Tag:
+            class: AppBundle\Entity\Tag
