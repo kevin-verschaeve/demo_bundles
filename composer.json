@@ -31,6 +31,7 @@
         "erusev/parsedown": "^1.5",
         "ezyang/htmlpurifier": "^4.7",
         "incenteev/composer-parameter-handler": "^2.0",
+        "javiereguiluz/easyadmin-bundle": "^1.16",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "symfony/monolog-bundle": "^3.0",

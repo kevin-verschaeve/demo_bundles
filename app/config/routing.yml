@@ -25,3 +25,8 @@ homepage:
         _controller: FrameworkBundle:Template:template
         template:    default/homepage.html.twig
         _locale:     '%locale%'
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /adm
