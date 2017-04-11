@@ -1,0 +1,8 @@
+AppBundle\Entity\Post:
+    post-{1..10}:
+        title: "<sentence()>"
+        slug: "<slug()>"
+        summary: "<text(50)>"
+        content: "<text()>"
+        publishedAt: "<dateTimeThisYear()>"
+        author: "@author-<current()>"

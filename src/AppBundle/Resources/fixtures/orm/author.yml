@@ -1,0 +1,6 @@
+AppBundle\Entity\User:
+    author-{1..10}:
+        fullName: "<name()>"
+        username: "<userName()>"
+        email: "<email()>"
+        password: "<password()>"
