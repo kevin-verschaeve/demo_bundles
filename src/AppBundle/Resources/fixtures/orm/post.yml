@@ -6,3 +6,4 @@ AppBundle\Entity\Post:
         content: "<text()>"
         publishedAt: "<dateTimeThisYear()>"
         author: "@author-<current()>"
+        tags: "<numberBetween(2, 5)>x @tag-*"
