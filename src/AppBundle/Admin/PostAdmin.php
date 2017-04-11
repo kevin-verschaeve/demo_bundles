@@ -10,6 +10,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -70,6 +71,7 @@ class PostAdmin extends AbstractAdmin
                     'show' => [],
                     'edit' => [],
                     'delete' => ['template' => ':admin:delete_button.html.twig'],
+                    'clone' => ['template' => ':admin:clone_button.html.twig'],
                 ],
             ])
         ;
@@ -90,4 +92,8 @@ class PostAdmin extends AbstractAdmin
         // die('ok');
     }
 
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection->add('clone', $this->getRouterIdParameter().'/clone');
+    }
 }
