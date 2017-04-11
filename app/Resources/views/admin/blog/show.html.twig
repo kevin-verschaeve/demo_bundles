@@ -14,6 +14,10 @@
         <p class="m-b-0"><strong>{{ 'label.summary'|trans }}</strong>: {{ post.summary }}</p>
     </div>
 
+    <div>
+        <img src="{{ asset('images/pop/'~post.imageName) }}" alt="{{ post.imageName }}">
+    </div>
+
     {{ post.content|md2html }}
 
     {{ include('blog/_post_tags.html.twig') }}

@@ -18,6 +18,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 /**
  * Defines the form used to create and manipulate blog posts.
@@ -61,6 +62,7 @@ class PostType extends AbstractType
                 'label' => 'label.tags',
                 'required' => false,
             ])
+            ->add('imageFile', VichImageType::class)
         ;
     }
 

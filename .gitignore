@@ -17,3 +17,4 @@
 /web/bundles/
 
 /var/data/*.sqlite
+/web/images

@@ -89,3 +89,10 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        pop_image:
+            uri_prefix:         /pop
+            upload_destination: '%kernel.root_dir%/../web/images/pop'
