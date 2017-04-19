@@ -15,7 +15,7 @@
     </div>
 
     <div>
-        <img src="{{ asset('images/pop/'~post.imageName) }}" alt="{{ post.imageName }}">
+        <img src="{{ asset('images/pop/'~post.imageName)|imagine_filter('pop_thumb') }}" alt="{{ post.imageName }}">
     </div>
 
     {{ post.content|md2html }}

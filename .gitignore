@@ -18,3 +18,4 @@
 
 /var/data/*.sqlite
 /web/images
+/web/media
