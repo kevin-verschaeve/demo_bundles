@@ -25,3 +25,6 @@ homepage:
         _controller: FrameworkBundle:Template:template
         template:    default/homepage.html.twig
         _locale:     '%locale%'
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

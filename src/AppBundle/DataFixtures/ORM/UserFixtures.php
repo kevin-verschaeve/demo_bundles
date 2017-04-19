@@ -45,6 +45,7 @@ class UserFixtures extends AbstractFixture implements ContainerAwareInterface
         $janeAdmin->setUsername('jane_admin');
         $janeAdmin->setEmail('jane_admin@symfony.com');
         $janeAdmin->setRoles(['ROLE_ADMIN']);
+        $janeAdmin->setEnabled(true);
         $encodedPassword = $passwordEncoder->encodePassword($janeAdmin, 'kitten');
         $janeAdmin->setPassword($encodedPassword);
         $manager->persist($janeAdmin);
@@ -59,6 +60,7 @@ class UserFixtures extends AbstractFixture implements ContainerAwareInterface
         $johnUser->setEmail('john_user@symfony.com');
         $encodedPassword = $passwordEncoder->encodePassword($johnUser, 'kitten');
         $johnUser->setPassword($encodedPassword);
+        $johnUser->setEnabled(true);
         $manager->persist($johnUser);
         $this->addReference('john-user', $johnUser);
 
