@@ -81,3 +81,9 @@ services:
     #
     # // same code using repository services
     # $posts = $this->get('app.post_repository')->findAll();
+
+    app.fos_user.password_resetter:
+        class: AppBundle\EventListener\RegisterListener
+        arguments: ['@router']
+        tags:
+            - { name: kernel.event_subscriber }
